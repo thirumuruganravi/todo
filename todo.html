@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f5f7f2">
+	<title>Daybook - A little more focus</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="todo.css">
+	<script src="todo.js" defer></script>
+</head>
+<body>
+	<main class="app-shell">
+		<aside class="sidebar" aria-label="Task navigation">
+			<a class="brand" href="#" aria-label="Daybook home">
+				<span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+				<span>daybook</span>
+			</a>
+
+			<div class="sidebar-section">
+				<p class="sidebar-label">YOUR SPACE</p>
+				<nav class="filter-nav" aria-label="Filter tasks">
+					<button class="nav-item is-active" type="button" data-filter="all" aria-pressed="true">
+						<span class="nav-icon icon-inbox" aria-hidden="true"></span><span>All tasks</span><span class="nav-count" id="all-count">0</span>
+					</button>
+					<button class="nav-item" type="button" data-filter="active" aria-pressed="false">
+						<span class="nav-icon icon-sun" aria-hidden="true"></span><span>In progress</span>
+					</button>
+					<button class="nav-item" type="button" data-filter="completed" aria-pressed="false">
+						<span class="nav-icon icon-check" aria-hidden="true"></span><span>Completed</span>
+					</button>
+				</nav>
+			</div>
+
+			<div class="sidebar-note">
+				<span class="note-spark" aria-hidden="true">*</span>
+				<p class="note-title">One thing at a time.</p>
+				<p class="note-copy">Small steps still move you forward.</p>
+			</div>
+
+			<div class="sidebar-footer"><span class="status-dot"></span> YOUR DAY, YOUR PACE</div>
+		</aside>
+
+		<section class="main-panel" aria-labelledby="page-title">
+			<header class="topbar">
+				<div class="date-stamp"><span class="date-dot"></span><span id="today-label">TODAY</span></div>
+				<div class="topbar-caption">A clearer mind starts here <span aria-hidden="true">↗</span></div>
+			</header>
+
+			<div class="content">
+				<section class="heading-block">
+					<p class="eyebrow">YOUR PERSONAL DAYBOOK</p>
+					<h1 id="page-title">Make room<br>for <em>what matters.</em></h1>
+					<p class="intro">A simple place to gather your thoughts and get things done.</p>
+				</section>
+
+				<section class="task-area" aria-label="Your tasks">
+					<form class="task-form" id="task-form">
+						<label class="sr-only" for="task-input">Add a task</label>
+						<span class="form-plus" aria-hidden="true">+</span>
+						<input id="task-input" name="task" type="text" placeholder="What needs your attention?" maxlength="180" autocomplete="off" required>
+						<button class="add-button" type="submit"><span aria-hidden="true">+</span><span>Add task</span></button>
+					</form>
+
+					<div class="list-toolbar">
+						<div class="list-heading"><span class="heading-indicator"></span><h2 id="list-title">All tasks</h2><span class="task-total" id="visible-count">0</span></div>
+						<button class="clear-button" id="clear-completed" type="button" hidden>Clear completed</button>
+					</div>
+
+					<ul class="task-list" id="task-list" aria-live="polite" aria-relevant="additions removals text"></ul>
+					<div class="empty-state" id="empty-state">
+						<div class="empty-illustration" aria-hidden="true"><span class="empty-sun"></span><span class="empty-line line-one"></span><span class="empty-line line-two"></span><span class="empty-check">+</span></div>
+						<p class="empty-title" id="empty-title">A fresh page.</p>
+						<p class="empty-copy" id="empty-copy">Add a task above and make today yours.</p>
+					</div>
+				</section>
+
+				<footer class="page-footer"><span>GOOD THINGS TAKE <span class="footer-accent">ONE STEP</span> AT A TIME</span><span id="progress-label">0 of 0 complete</span></footer>
+			</div>
+		</section>
+	</main>
+</body>
+</html>
